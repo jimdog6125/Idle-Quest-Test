@@ -1,8 +1,12 @@
 var kills = 0;
+var coins = 0;
 
 function kill(number){
     kills = kills + number;
+    coins = coins + number;
     document.getElementById("kills").innerHTML = kills;
+    document.getElementById("coins").innerHTML = coins;
+	
 };
 
 var swords = 0;
