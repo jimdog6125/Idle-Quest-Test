@@ -45,18 +45,18 @@ function buyCannon(){
     var nextCost = Math.floor(500 * Math.pow(1.1,cannons));       //works out the cost of the next cursor
     document.getElementById('cannonCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
-var oilTowers = 0;
+var towers = 0;
 
-function buyOilTower(){
-    var oilTowerCost = Math.floor(5000 * Math.pow(1.1,oilTowers));     //works out the cost of this cursor
-    if(kills >= oilTowerCost){                                   //checks that the player can afford the cursor
-        oilTowers = oilTowers + 1;                                   //increases number of cursors
-    	kills = kills - oilTowerCost;                          //removes the cookies spent
-        document.getElementById('oilTowers').innerHTML = oilTowers;  //updates the number of cursors for the user
+function buyTower(){
+    var towerCost = Math.floor(5000 * Math.pow(1.1,towers));     //works out the cost of this cursor
+    if(kills >= towerCost){                                   //checks that the player can afford the cursor
+        towers = towers + 1;                                   //increases number of cursors
+    	kills = kills - towerCost;                          //removes the cookies spent
+        document.getElementById('towers').innerHTML = towers;  //updates the number of cursors for the user
         document.getElementById('kills').innerHTML = kills;  //updates the number of cookies for the user
     };
-    var nextCost = Math.floor(5000 * Math.pow(1.1,oilTowers));       //works out the cost of the next cursor
-    document.getElementById('oilTowerCost').innerHTML = nextCost;  //updates the cursor cost for the user
+    var nextCost = Math.floor(5000 * Math.pow(1.1,towers));       //works out the cost of the next cursor
+    document.getElementById('towerCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
 window.setInterval(function(){
@@ -76,7 +76,7 @@ window.setInterval(function(){
 }, 500);
 window.setInterval(function(){
 	
-	kill(oilTowers);
+	kill(towers);
 
 }, 100);
 
