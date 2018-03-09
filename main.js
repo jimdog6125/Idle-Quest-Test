@@ -136,23 +136,3 @@ function preventZoom(e) {
   e.preventDefault();
   e.target.click();
 }
-function buyPrestige(){
-    var prestigeCost = 10000000;   //works out the cost of this cursor
-    if(kills >= prestigeCost){                //checks that the player can afford the cursor
-        prestige = prestige + 1;                                   //increases number of cursors
-    	kills = 0;
-	coins = 0;
-	swords = 0;
-	magic = 0;
-	cannons = 0;
-	towers = 0;
-        document.getElementById('prestige').innerHTML = prestige ;                                     
-        document.getElementById('coins').innerHTML = coins;  //updates the number of cookies for the user
-	document.getElementById('kills').innerHTML = kills;
-	document.getElementById('swords').innerHTML = swords;
-    document.getElementById('magic').innerHTML = magic;
-	document.getElementById('cannons').innerHTML = cannons;
-	document.getElementById('towers').innerHTML = towers;
-if (prestige == 1){
-	document.getElementById('moral').disabled = false; 
-}
