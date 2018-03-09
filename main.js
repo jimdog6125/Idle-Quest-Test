@@ -136,7 +136,7 @@ function preventZoom(e) {
   e.preventDefault();
   e.target.click();
 }
-function buySword(){
+function buyPrestige(){
     var prestigeCost = 10000000;   //works out the cost of this cursor
     if(kills >= prestigeCost){                //checks that the player can afford the cursor
         prestige = prestige + 1;                                   //increases number of cursors
