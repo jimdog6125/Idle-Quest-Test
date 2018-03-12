@@ -1,5 +1,5 @@
 var kills = 0;
-var coins = 5000000000;
+var coins = 0;
 
 function kill(number){
     kills = kills + number;
