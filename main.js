@@ -1,7 +1,14 @@
 var kills = 0;
 var coins = 0;
-
-function kill(number){
+var killNum = 1;
+function kill(){
+    kills = kills + killNum;
+    coins = coins + killNum;
+    document.getElementById("kills").innerHTML = kills;
+    document.getElementById("coins").innerHTML = coins;
+	
+};
+function autokill(number){
     kills = kills + number;
     coins = coins + number;
     document.getElementById("kills").innerHTML = kills;
@@ -143,28 +150,62 @@ function buyAMagic(){
 
 window.setInterval(function(){
 	
-	kill(swords);
+	autokill(swords);
 	
 }, 2000);
 window.setInterval(function(){
 	
-	kill(magic);
+	autokill(magic);
 
 }, 1000);
 window.setInterval(function(){
 	
-	kill(cannons);
+	autokill(cannons);
 
 }, 500);
 window.setInterval(function(){
 	
-	kill(towers);
+	autokill(towers);
 
 }, 250);
 window.setInterval(function(){
 	
-	kill(ancientMagic);
+	autokill(ancientMagic);
 
 }, 28.55);
 
+var dblKills = 0;
+function buyDblKill(){
+ var dblKillCost = Math.floor(100 * Math.pow(1.1,dblKills));     //works out the cost of this cursor
+function dblKill(){
+	killNum = killNum * 2;	
+};
+if(coins >= dblKillCost){                                   //checks that the player can afford the cursor
+        dblKills = dblKills + 1;                                   //increases number of cursors
+    	coins = coins - dblKillCost;                          //removes the cookies spent
+        document.getElementById('coins').innerHTML = coins; //updates the number of cookies for the user
+	    dblKill(1);
+    };
+    var nextCost = Math.floor(100 * Math.pow(1.1,dblKills));       //works out the cost of the next cursor
+    document.getElementById('dblKillCost').innerHTML = nextCost;  //updates the cursor cost for the user	
+};
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
